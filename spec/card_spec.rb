@@ -1,5 +1,6 @@
 require './lib/card'
 
+#Begining of Card tests (original card)
 
 RSpec.describe Card do
   it 'exists' do
@@ -26,16 +27,30 @@ RSpec.describe Card do
     
   end
   
+  # Card1 tests Start:
+
   it 'exists' do
-    card1 = Card.new("Where is the statue of liberty located?", "New Tork", :Geography)
+    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
     
     expect(card1).to be_instance_of(Card)
   end
 
-  it 'has a questiion' do
-    card1 = Card.new("Where is the statue of liberty located?", "New Tork", :Geography)
+  it 'has a question' do
+    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
 
     expect(card1.question).to eq("Where is the statue of liberty located?")
+  end
+
+  it 'has an answer' do
+    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+
+    expect(card1.answer).to eq("New York")
+  end
+
+  it 'has a catagory' do
+    card1 = Card.new("Where is the statue of liberty located?", "New York", "Geography")
+
+    expect(card1.category).to eq(:Geography)
   end
 
 end

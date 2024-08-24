@@ -1,6 +1,6 @@
 require './lib/card'
 
-#Begining of Card tests (original card)
+#Begining of Card tests (original card)-------------------------------------
 
 RSpec.describe Card do
   it 'exists' do
@@ -22,55 +22,75 @@ RSpec.describe Card do
   end
 
   it 'has a category' do
-    card = Card.new("What is the capital of Alaska?", "Juneau", "Geography")
-     expect(card.category).to eq(:Geography)
+    card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    
+    expect(card.category).to eq(:Geography)
     
   end
   
-  # Card1 tests Start:
+  # card1 tests Start:------------------------------------------------------
 
-  it 'exists' do
-    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+    it 'exists' do
+      card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
     
-    expect(card1).to be_instance_of(Card)
-  end
+      expect(card1).to be_instance_of(Card)
+    end
 
-  it 'has a question' do
-    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+    it 'has a question' do
+      card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
 
-    expect(card1.question).to eq("Where is the statue of liberty located?")
-  end
+      expect(card1.question).to eq("Where is the statue of liberty located?")
+   end
 
-  it 'has an answer' do
-    card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+    it 'has an answer' do
+      card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
 
-    expect(card1.answer).to eq("New York")
-  end
+      expect(card1.answer).to eq("New York")
+    end
 
-  it 'has a catagory' do
-    card1 = Card.new("Where is the statue of liberty located?", "New York", "Geography")
+    it 'has a catagory' do
+      card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
 
-    expect(card1.category).to eq(:Geography)
-  end
+      expect(card1.category).to eq(:Geography)
+    end
 
-  #card2 Tests begin
+      #card2 Tests begin----------------------------------------------------
 
-  it "exists" do
-    card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+      it "exists" do
+        card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
 
-    expect(card2).to be_instance_of(Card)
-  end
+        expect(card2).to be_instance_of(Card)
+      end
 
-  it 'has a question' do
-    card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+      it 'has a question' do
+        card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
 
-    expect(card2.question).to eq("What galaxy are we in?")
-  end
+        expect(card2.question).to eq("What galaxy are we in?")
+      end
 
-  it 'has an answer' do
-    card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+      it 'has an answer' do
+        card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
 
-    expect(card2.answer).to eq("Milky Way")
-  end
+        expect(card2.answer).to eq("Milky Way")
+      end
 
+      it 'has a category' do
+        card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+
+        expect(card2.category).to eq(:Astronomy)
+      end
+
+#beginning of card3 tests
+        it 'exists' do
+          card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
+
+          expect(card3).to be_instance_of(Card)
+        end
+
+        it "has a question" do
+          card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
+
+          expect(card3.question).to eq("What is the most dangerous whale?")
+        end
+        
 end

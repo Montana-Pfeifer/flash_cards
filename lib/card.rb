@@ -22,7 +22,8 @@ class Card
     def category
        @category = :Geography
     end
-    
+
 end
 
 card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)

@@ -1,10 +1,21 @@
+require 'pry'
+
 class Turn
     attr_accessor :guess, :card
 
     def initialize (guess, card)
-        @guess = []
-        @action = action
+        @guess = guess
+        @card = card
     end
+
+        def correct?
+            @guess.downcase == @card.answer.downcase
+        end
+
+            def feedback
+                correct? ? "Correct!" : "Incorrect."
+            end
 end
+
     
         

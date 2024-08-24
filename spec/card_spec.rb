@@ -54,7 +54,7 @@ RSpec.describe Card do
       expect(card1.category).to eq(:Geography)
     end
 
-      #card2 Tests begin----------------------------------------------------
+######card2 Tests begin----------------------------------------------------
 
       it "exists" do
         card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
@@ -80,17 +80,30 @@ RSpec.describe Card do
         expect(card2.category).to eq(:Astronomy)
       end
 
-#beginning of card3 tests
+########beginning of card3 tests-----------------------------------------------
+        
         it 'exists' do
           card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
 
           expect(card3).to be_instance_of(Card)
         end
 
-        it "has a question" do
+        it 'has a question' do
           card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
 
           expect(card3.question).to eq("What is the most dangerous whale?")
         end
-        
+
+        it 'has an answer' do
+          card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
+
+          expect(card3.answer).to eq("Orca")
+        end
+
+        it 'has a category' do
+          card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
+
+          expect(card3.category).to eq (:Animals)
+        end
+
 end

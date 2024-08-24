@@ -21,8 +21,21 @@ RSpec.describe Card do
   end
 
   it 'has a category' do
-    card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    card = Card.new("What is the capital of Alaska?", "Juneau", "Geography")
      expect(card.category).to eq(:Geography)
     
   end
+  
+  it 'exists' do
+    card1 = Card.new("Where is the statue of liberty located?", "New Tork", :Geography)
+    
+    expect(card1).to be_instance_of(Card)
+  end
+
+  it 'has a questiion' do
+    card1 = Card.new("Where is the statue of liberty located?", "New Tork", :Geography)
+
+    expect(card1.question).to eq("Where is the statue of liberty located?")
+  end
+
 end

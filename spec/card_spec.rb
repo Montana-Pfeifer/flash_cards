@@ -60,5 +60,11 @@ RSpec.describe Card do
 
     expect(card2).to be_instance_of(Card)
   end
+
+  it 'has a question' do
+    card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+
+    expect(card2.question).to eq("What galaxy are we in?")
+  end
   
 end

@@ -3,6 +3,7 @@ require './lib/card'
 
 
     RSpec.describe Turn do
+######## First tests of turn class (card)--------------------------------------------------     
         it 'create a Turn instance with a card' do
 
             card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
@@ -30,4 +31,16 @@ require './lib/card'
                 end
     
     
+######## Tests for card1
+
+        it 'create a Turn instance with card' do
+
+            card = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+            turn = Turn.new("New York", card)
+
+            expect(turn).to be_instance_of(Turn)
+            expect(turn.card).to eq(card)
+            expect(turn.guess).to eq(card.answer)
+        end
+
 end

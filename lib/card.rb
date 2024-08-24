@@ -20,10 +20,12 @@ class Card
     end
 
     def category
-       @category = :Geography
+       @category
     end
 
 end
 
+card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
 card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)
 card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)

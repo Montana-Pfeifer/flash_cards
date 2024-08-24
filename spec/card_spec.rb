@@ -80,7 +80,7 @@ RSpec.describe Card do
         expect(card2.category).to eq(:Astronomy)
       end
 
-########beginning of card3 tests-----------------------------------------------
+######## beginning of card3 tests-----------------------------------------------
         
         it 'exists' do
           card3 = Card.new("What is the most dangerous whale?", "Orca", :Animals)
@@ -106,4 +106,24 @@ RSpec.describe Card do
           expect(card3.category).to eq (:Animals)
         end
 
+########## Start Card4 Tests--------------------------------------------------------       
+
+          it 'exists' do
+            card4 = Card.new("What year was the Declaration of Independence made?", "1776", :History)
+
+            expect(card4).to be_instance_of(Card)
+          end
+
+          it 'has a question' do
+            card4 = Card.new("What year was the Declaration of Independence made?", "1776", :History)
+
+            expect(card4.question).to eq("What year was the Declaration of Independence made?")
+          end
+
+          it 'has an answer' do
+            card4 = Card.new("What year was the Declaration of Independence made?", "1776", :History)
+
+            expect(card4.answer).to eq ("1776")
+          end
+          
 end

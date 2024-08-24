@@ -43,4 +43,19 @@ require './lib/card'
             expect(turn.guess).to eq(card.answer)
         end
 
+            it 'checks if the guess is correct' do
+                card = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+                turn = Turn.new("New York", card)
+            
+                expect(turn.correct?).to be true
+                expect(turn.feedback).to eq("Correct!")
+            end
+
+                it 'checks if answer is incorrect' do
+                    card = Card.new("Where is the statue of liberty located?", "New York", :Geography)
+                    turn = Turn.new("Denver", card)
+
+                expect(turn.correct?).to be false
+                expect(turn.feedback).to eq ("Incorrect.")
+                end
 end

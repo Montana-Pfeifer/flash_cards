@@ -66,5 +66,11 @@ RSpec.describe Card do
 
     expect(card2.question).to eq("What galaxy are we in?")
   end
-  
+
+  it 'has an answer' do
+    card2 = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+
+    expect(card2.answer).to eq("Milky Way")
+  end
+
 end

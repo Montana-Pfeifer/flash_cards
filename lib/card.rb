@@ -2,25 +2,27 @@ require 'pry'
 
 class Card
 
-        attr_reader :question, :answer, :catagory
+        attr_reader :question, :answer, :category
 
-    def initialize (question, answer, catagory)
+    def initialize (question, answer, category)
         @question = question
         @answer = answer
-        @catagory = catagory
+        @category = category
     end
 
     def question
-        "What is the capital of Alaska?"
+        @question
     end
 
 
     def answer
-        "Juneau"
+        @answer
     end
 
     def category
-       catagory = :Geography
+       @category = :Geography
     end
+    
 end
 
+card1 = Card.new("Where is the statue of liberty located?", "New York", :Geography)

@@ -85,4 +85,16 @@ require './lib/card'
                     expect(turn.correct?).to be false
                     expect(turn.feedback).to eq ("Incorrect.")
                 end
+
+############ tests for card3
+                    it 'create a Turn instance with a card' do
+
+                        card = Card.new("What is the most dangerous whale?", "Orca", :Animals)
+                        turn = Turn.new("Orca", card)
+
+                        expect(turn).to be_instance_of(Turn)
+                        expect(turn.card).to eq(card)
+                        expect(turn.guess).to eq(card.answer)
+                    end
+
 end

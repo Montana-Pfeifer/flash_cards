@@ -70,4 +70,11 @@ require './lib/card'
                     expect(turn.guess).to eq(card.answer)
                 end
 
+                it 'checks if guess is correct' do
+                    card = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+                    turn = Turn.new("Milky Way", card)
+
+                    expect(turn.correct?).to be true
+                    expect(turn.feedback).to eq ("Correct!")
+                end
 end

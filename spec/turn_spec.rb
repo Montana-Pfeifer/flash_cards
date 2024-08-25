@@ -77,4 +77,12 @@ require './lib/card'
                     expect(turn.correct?).to be true
                     expect(turn.feedback).to eq ("Correct!")
                 end
+
+                it 'checks if answer is incorrect' do
+                    card = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+                    turn = Turn.new("Bananas", card)
+
+                    expect(turn.correct?).to be false
+                    expect(turn.feedback).to eq ("Incorrect.")
+                end
 end

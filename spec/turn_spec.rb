@@ -116,6 +116,7 @@ require './lib/card'
 
 ############## tests for card4
                         it 'create a Turn instance with a card' do
+
                             card = Card.new("What year was the Declaration of Independence made?", "1776", :History)
                             turn = Turn.new("1776", card)
 
@@ -123,4 +124,22 @@ require './lib/card'
                             expect(turn.card).to eq(card)
                             expect(turn.guess).to eq(card.answer)
                         end
+
+                        it 'checks if guess is correct' do
+
+                            card = Card.new("What year was the Declaration of Independence made?", "1776", :History)
+                            turn = Turn.new("1776", card)
+
+                            expect(turn.correct?).to be true
+                            expect(turn.feedback).to eq("Correct!")
+                        end
+
+                        it 'checks if guess is incorrect' do
+                            card = Card.new("What year was the Declaration of Independence made?", "1776", :History)
+                            turn = Turn.new("1775", card)
+
+                            expect(turn.correct?).to be false
+                            expect(turn.feedback).to eq("Incorrect.")
+                        end
+
 end

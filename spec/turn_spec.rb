@@ -58,4 +58,16 @@ require './lib/card'
                 expect(turn.correct?).to be false
                 expect(turn.feedback).to eq ("Incorrect.")
                 end
+
+######### tests for card2
+                it 'create a Turn instance with card' do
+
+                    card = Card.new("What galaxy are we in?", "Milky Way", :Astronomy)
+                    turn = Turn.new("Milky Way", card)
+
+                    expect(turn).to be_instance_of(Turn)
+                    expect(turn.card).to eq(card)
+                    expect(turn.guess).to eq(card.answer)
+                end
+
 end

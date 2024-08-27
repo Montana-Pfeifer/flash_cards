@@ -32,8 +32,9 @@ class Round
                 end
 
                          def percent_correct_by_category(category)
-                        total_in_category + @turns.count { |turn| turn.card.category == category }
-                        correct_in_category = number_correct_by_category(category)
+                        total_in_category = @deck.cards.count { |card| card.category == category } #total_in_category will equal the instance of the deck class 
+                        correct_in_category = @turns.count { |turn| turn.correct? && turn.card.category == category }
+                        return 0 if total_in_category == 0
                         (correct_in_category.to_f / total_in_category) * 100
                         end
 
@@ -58,5 +59,10 @@ class Round
 
     puts "GAME OVER! you had #{number_correct} correct guesses out of #{deck.count}."
     puts "Your score: #{percent_correct.round(2)}%"
-    end
+
+        categories = @deck.cards.map { |card| card.category }.uniq
+        categories.each do |category|
+        puts "#{category}: #{percent_correct_by_category(category).round(2)}% correct"
+        end    
+   end
 end

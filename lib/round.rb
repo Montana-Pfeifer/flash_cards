@@ -37,4 +37,9 @@ class Round
         (correct_in_category.to_f / total_in_category) * 100
     end
 
+    def start
+        puts "Welcome to Flash Cards"
+        puts "You have #{deck.count} cards in your deck."
+
+    end
 end

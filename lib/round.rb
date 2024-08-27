@@ -55,5 +55,8 @@ class Round
         puts "Incorrect."
         end
     end
+
+    puts "GAME OVER! you had #{number_correct} correct guesses out of #{deck.count}."
+    puts "Your score: #{percent_correct.round(2)}%"
     end
 end
